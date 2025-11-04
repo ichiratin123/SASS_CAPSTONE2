@@ -1,0 +1,41 @@
+.banner{
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+        .banner__pic{
+            width: 35%;
+        }
+        .banner__content{
+            width: 50%;
+        }
+
+        button{
+            padding: 0.75rem 1.5rem;
+            background: #007bff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background $transition-speed ease;
+            animation: changeColor 1s infinite;
+            &:hover{
+                background: darken(#007bff, 10%);
+            }
+            a{  
+                text-decoration: none;
+                color: white;
+            }
+        }
+
+        @include respond(md){
+            flex-direction: column;
+            .banner__pic{
+                width: 100%;
+            }
+            .banner__content{
+                width: 100%;
+            }
+        }
+    }
+}

@@ -3,12 +3,116 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-
+    <title>Home</title>
+    <!-- fontAweSome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Load Roboto with required weights so font-weight works as expected -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- main css  -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    '
+    <!-- header -->
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="">Phong Phone</a>
+        </div>
+        <button class="burger"><i class="fa-solid fa-bars"></i></button>
+        <nav class="menu">
+          <a href="#" class="active">Home</a>
+          <a href="#">About</a>
+          <a href="#">Shop</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <!-- banner -->
+    <div class="banner">
+      <div class="container flex_mid">
+        <img src="./assets/main_ip17pm.png" alt="" class="banner__pic" />
+        <div class="banner__content title">
+          <h1>Iphone 17 Pro | Pro Max</h1>
+          <p>
+            iPhone 17 launches a more powerful A19/ A19 Pro chip, 18MP front
+            camera with new Center Stage technology, ProMotion Super Retina XDR
+            OLED screen with 120Hz refresh rate for all versions and high-speed
+            USB-C charging port on the Pro/ Pro Max line. Let's see detailed
+            reviews of new scores on 17 series below now!
+          </p>
+          <button>
+            <a href="#content">Mua ngay</a>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- content -->
+    <div class="content" id="content">
+      <div class="container">
+        <div class="title content__title">
+          <h1>Hot Products</h1>
+        </div>
+        <div class="content__filter">
+          <label class="filter__label">Filter:</label>
+          <select id="filter" name="filter" class="filter__selection">
+            <option value="0">Choose brand</option>
+            <option value="1">Samsung</option>
+            <option value="2">Apple</option>
+          </select>
+        </div>
+        <div class="content__items" id="listProducts"></div>
+      </div>
+    </div>
+    <!-- cart -->
+    <div class="overlay"></div>
+
+    <div class="cart">
+      <div class="cart__header">
+        <h2>Cart</h2>
+        <button class="cart__close">&times;</button>
+      </div>
+      <div class="cart__body">
+        <div id="cartItem" class="cart__items"></div>
+        <div class="cart__total">
+          <span class="total-label">Total:</span>
+          <span class="total-amount">$ 0</span>
+        </div>
+        <div class="cart__function">
+          <button class="btn__order">Order</button>
+        </div>
+      </div>
+    </div>
+    <div class="cart__footer">
+      <div id="cartTotal" class="cart__total"></div>
+      <button class="open-cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </button>
+    </div>
+
+    <!-- footer -->
+
+    <!-- axios  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.11.0/axios.min.js"
+      integrity="sha512-h9644v03pHqrIHThkvXhB2PJ8zf5E9IyVnrSfZg8Yj8k4RsO4zldcQc4Bi9iVLUCCsqNY0b4WXVV4UB+wbWENA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- main js  -->
     <script type="module" src="./js/main.js"></script>
+    <!-- burger header  -->
+    <script src="./js/layout/header.js"></script>
+    <!-- cart  -->
+    <script src="./js/layout/cart.js"></script>
   </body>
 </html>

@@ -1,0 +1,105 @@
+.content{
+    margin-top: 20px;
+    .content__title{
+        display: flex;
+        justify-content: center;
+    }
+    .content__filter{
+        display: flex;
+        margin-top: 10px;
+        justify-content: center;
+        margin-bottom: 10px;
+        align-items: center;
+        
+        .filter__label{
+            font-size: 16px;
+            margin-right: 5px;
+        }
+        .filter__selection{
+            font-size: medium;
+            border-radius: 10px;
+            font-size: 16px;
+            padding: 10px;
+            background-color: white;
+        }
+    }
+
+    .content__items{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+        .card{
+            background-color: transparent;
+            padding: 30px;
+            @include box-shadow();
+            img {
+                width: 100%;
+                @include box-shadow();
+            }
+            .card__body{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .card__body-top{
+                    margin-top: 10px;
+                    .title{
+                        h2{
+                            font-size: 20px;
+                        }
+                        p{
+                            font-size: 16px;
+                            color: $dark;
+                            font-weight: bold;
+                            &:first-of-type{
+                                color: $gray-100;
+                                font-weight: 100;
+                            }
+                        }
+                        span{
+                            font-size: 16px;
+                            color: $gray-100;
+                            font-weight: 100;
+                        }
+                    }
+                }
+                .card__body-bot{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    .price{
+                        font-size: 20px;
+                        margin-bottom: 20px;
+                    }
+                    .buy button{
+                        padding: 0.5rem 1rem;
+                        border: none;
+                        box-shadow: 6px 6px 4px #e2ebfc, -6px -6px 4px #fff;
+                        background-color: #f5f9fe;
+                        color: $primary-300;
+                        font-size: 14px;
+                        font-weight: $fw-light;
+                        cursor: pointer;
+                        transition: all 0.5s;
+                        &:hover{
+                            background-color: $primary-300;
+                            color: white
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @include respond(md){
+        .filter__selection{
+            option{
+                font-size: 10px;
+            }
+        }
+        .content__items{
+            grid-template-columns: repeat(1,1fr);
+        }
+    }
+}
