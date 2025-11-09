@@ -3,10 +3,210 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style2.css" />
+    <title>Admin</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <!-- header  -->
+    <section class="header">
+      <div class="container">
+        <div class="header__title">
+          <h1>Admin</h1>
+        </div>
+        <nav class="nav_items">
+          <a href="../home/index.html">
+            <div class="home_btn">
+              <i class="fa-solid fa-house-user"></i> Home
+            </div></a
+          >
+        </nav>
+      </div>
+    </section>
+
+    <!-- content  -->
+    <section class="content">
+      <div class="overlay"></div>
+      <div class="container">
+        <h1 class="content__title">Product Management</h1>
+        <div class="content__funcs">
+          <button id="open__modal" class="open__btn">ADD PRODUCT</button>
+          <div class="find__item">
+            <input
+              type="text"
+              class="find__input"
+              placeholder="Find"
+              id="findBox"
+            />
+            <button class="find__btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- modal  -->
+      <div id="myModal" class="modal">
+        <!-- modal header  -->
+        <div class="modal__header">
+          <h1 class="modal__title" id="modalTitle">Add Product</h1>
+          <span class="close">&times;</span>
+        </div>
+        <hr />
+        <!-- Modal content -->
+        <div class="modal-content">
+          <form role="form" id="productForm" class="form__product">
+            <div class="form__item">
+              <div class="item__layout">
+                <i class="fa-solid fa-id-badge"></i>
+                <input
+                  type="text"
+                  id="namesp"
+                  class="form__control"
+                  placeholder="Name"
+                />
+                <span class="sp-thongbao" id="nametb"></span>
+              </div>
+            </div>
+
+            <div class="form__item">
+              <div class="item__layout">
+                <i class="fa-solid fa-money-bill"></i>
+                <input
+                  type="number"
+                  id="pricesp"
+                  class="form__control"
+                  placeholder="Price"
+                />
+                <span class="sp-thongbao" id="pricetb"></span>
+              </div>
+            </div>
+
+            <div class="form__item">
+              <div class="item__layout">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <input
+                  type="number"
+                  id="screensp"
+                  class="form__control"
+                  placeholder="Screen"
+                />
+                <span class="sp-thongbao" id="screentb"></span>
+              </div>
+            </div>
+
+            <div class="form__item">
+              <div class="item__layout">
+                <i class="fa-solid fa-camera"></i>
+                <input
+                  type="number"
+                  id="backsp"
+                  class="form__control"
+                  placeholder="Back Camera"
+                />
+                <span class="sp-thongbao" id="backtb"></span>
+              </div>
+            </div>
+
+            <div class="form__item">
+              <div class="item__layout">
+                <i class="fa-solid fa-camera"></i>
+                <input
+                  type="number"
+                  id="frontsp"
+                  class="form__control"
+                  placeholder="Front Camera"
+                />
+                <span class="sp-thongbao" id="fronttb"></span>
+              </div>
+            </div>
+
+            <div class="form__item">
+              <div class="item__layout">
+                <i class="fa-solid fa-image"></i>
+                <input
+                  type="text"
+                  id="imgsp"
+                  class="form__control"
+                  placeholder="Image"
+                />
+                <span class="sp-thongbao" id="imgtb"></span>
+              </div>
+            </div>
+
+            <div class="form__item">
+              <div class="item__layout">
+                <i class="fa-solid fa-pen"></i>
+                <textarea
+                  type="text"
+                  id="descsp"
+                  class="form__control"
+                  placeholder="Description"
+                  rows="5"
+                  cols="10"
+                ></textarea>
+                <span class="sp-thongbao" id="desctb"></span>
+              </div>
+            </div>
+
+            <div class="form__item">
+              <div class="item__layout">
+                <i class="fa-regular fa-square-check"></i>
+                <select class="form-control" id="typesp">
+                  <option value="0">Choose brand</option>
+                  <option value="Apple">Apple</option>
+                  <option value="Samsung">Samsung</option>
+                </select>
+                <span class="sp-thongbao" id="typetb"></span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <hr />
+        <!-- modal footer  -->
+        <div class="modal__footer">
+          <button class="btn__add" id="btnAdd">Add</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="list">
+      <div class="container">
+        <div class="card__body">
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th class="table__price">
+                  <span>Price</span>
+                  <i class="fa fa-arrow-up" id="SapXepTang"></i>
+                  <i class="fa fa-arrow-down" id="SapXepGiam"></i>
+                </th>
+                <th>Screen</th>
+                <th>Back Camera</th>
+                <th>Front Camera</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Functions</th>
+              </tr>
+            </thead>
+            <tbody id="danhSachSP"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="./js/layout/modal.js"></script>
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>

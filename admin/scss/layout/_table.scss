@@ -1,0 +1,118 @@
+.card__body {
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        
+        thead {
+            background: $primary-300;
+            color: white;
+            
+            th {
+                padding: 15px;
+                text-align: left;
+                font-weight: 600;
+                font-size: 14px;
+                text-transform: uppercase;
+                
+                &.table__price {
+                    white-space: nowrap;
+                    position: relative;
+                    cursor: pointer;
+
+                    i {
+                        margin-left: 5px;
+                        font-size: 12px;
+                        opacity: 0.8;
+                        transition: opacity 0.2s;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                border-bottom: 1px solid #eee;
+                transition: background-color 0.2s;
+
+                &:hover {
+                    background-color: #f8f9fa;
+                }
+
+                td {
+                    padding: 12px 15px;
+                    font-size: 14px;
+                    color: #333;
+
+                    &:nth-child(8) {
+                        max-width: 200px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    button {
+                        padding: 6px 12px;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        font-size: 13px;
+                        transition: background 0.2s;
+
+                        &.btn-edit {
+                            background: $primary-300;
+                            color: white;
+                            margin-right: 5px;
+
+                            &:hover {
+                                background: darken($primary-300, 5%);
+                            }
+                        }
+
+                        &.btn-delete {
+                            background: #dc3545;
+                            color: white;
+
+                            &:hover {
+                                background: darken(#dc3545, 5%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include respond(md){
+     .card__body {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 15px 0px;
+
+        table {
+            min-width: 40%;
+        }
+    }
+}
+
+@include respond(lg){
+     .card__body {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 15px 0px;
+
+        table {
+            min-width: 40%;
+        }
+    }
+}

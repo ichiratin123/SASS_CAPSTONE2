@@ -1,0 +1,46 @@
+.header{
+    background-color: $primary-300;
+    padding: 20px 0px;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .header__title{
+            font-size: $font-3xl;
+            color: $light;
+        }
+        .nav_items{
+            a{
+                text-decoration: none;
+                .home_btn{
+                    display: flex;
+                    flex-direction: column;
+                    justify-items: center;
+                    align-items: center;
+                    color: $light;
+                    i{
+                        font-size: $font-3xl;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+
+        @include respond(md){
+            .header__title{
+                font-size: $font-2xl;
+            }
+            .nav_items{
+            a{
+                .home_btn{
+                    i{
+                        font-size: $font-2xl;
+                    }
+                }
+            }
+        }
+        }
+
+    }
+}

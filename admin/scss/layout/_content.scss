@@ -1,0 +1,44 @@
+.content{
+    .content__title{
+        margin-top: 20px;
+        font-size: $font-3xl;
+        display: flex;
+        justify-content: center;
+    }
+    .content__funcs{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .find__item{
+            margin-top: 20px;
+            .find__input{
+                padding: 10px 20px;
+                border: 1px solid #888;
+                border-radius: 12px;
+            }
+            .find__btn{
+                padding: 10px 20px;
+                background-color: $primary-300;
+                cursor: pointer;
+                color: white;
+                font-weight: 400;
+                border: 1px solid #888;
+                border-radius: 12px;
+                &:hover{
+                    background-color: $primary-200;
+                }
+            }
+        }
+    }
+
+    @include respond(md){
+        .content__title{    
+            font-size: $font-2xl;
+        }
+
+        .content__funcs{
+            flex-direction: column;
+        }
+    }
+}
