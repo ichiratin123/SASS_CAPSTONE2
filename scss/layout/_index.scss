@@ -1,0 +1,30 @@
+body{
+    background-image: linear-gradient(to bottom, $primary-300, $primary-100);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .main{
+        display: flex;
+        button{
+            margin: 10px;
+            padding: 50px 60px;
+            cursor: pointer;
+            border-radius: 12px;
+            background-color: $primary-300;
+            border: 1px solid #888;
+            a{
+                text-decoration: none;
+                color: white;
+                font-size: 16px;
+            }
+            &:hover{
+                background-color: $primary-200;
+            }
+        }
+    }
+}
+
